@@ -1,8 +1,13 @@
 var Airport = function() {
 
 this.planes = [];
+this.capacity = 5;
 
 Airport.prototype.land = function(plane) {
+  if(this.planes === undefined || this.planes.length === this.capacity) {
+    throw new Error ('Airport full');
+  }
+
   this.planes.push(plane);
   console.log(this.planes);
 }

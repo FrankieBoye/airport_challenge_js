@@ -20,4 +20,12 @@ describe('airport', function() {
     expect(airport.plane).not.toContain(plane);
   })
 
+  it('prevents landing when the airport is full', function() {
+    for(var i = 0; i < 4; i++){
+      airport.land(plane);
+    }
+    airport.land(plane);
+    expect(airport.land).toThrowError('Airport full');
+  })
+
 })
