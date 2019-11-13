@@ -1,0 +1,11 @@
+var Airport = function() {
+
+this.planes = [];
+
+Airport.prototype.land = function(plane) {
+  this.planes.push(plane);
+  console.log(this.planes);
+}
+
+
+}
